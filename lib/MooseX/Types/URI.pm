@@ -128,7 +128,7 @@ Think about L<Path::Resource> integration of some sort
 
 =head1 VERSION CONTROL
 
-L<http://code2.0beta.co.uk/moose/svn/>. Ask on #moose for commit bits.
+L<http://github.com/nothingmuch/moosex-types-uri/>
 
 =head1 AUTHOR
 
