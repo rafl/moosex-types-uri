@@ -1,2 +1,6 @@
+0.02  Wed, 27 May 2009 19:49:49 +0200
+  * Use MooseX::Types type declarators in the type coercions (Daniel Pittman).
+  * Coerce from additional MooseX::Types::Path::Class types (Daniel Pittman).
+
 0.01  Sun, Jan 11 06:53:35 2009 +0200
   * Initial release.
