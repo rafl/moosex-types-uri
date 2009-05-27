@@ -18,7 +18,7 @@ use URI::FromHash qw(uri);
 use Moose::Util::TypeConstraints;
 
 use MooseX::Types::Moose qw{Str ScalarRef HashRef};
-use MooseX::Types::Path::Class;
+use MooseX::Types::Path::Class qw{File Dir};
 
 use namespace::clean;
 
@@ -45,6 +45,8 @@ coerce( Uri,
     from Str                 , via { URI->new($_) },
     from "Path::Class::File" , via { URI::file->new($_) },
     from "Path::Class::Dir"  , via { URI::file->new($_) },
+    from File                , via { URI::file->new($_) },
+    from Dir                 , via { URI::file->new($_) },
     from ScalarRef           , via { my $u = URI->new("data:"); $u->data($$_); $u },
     from HashRef             , via { uri(%$_) },
 );
@@ -53,6 +55,8 @@ class_type FileUri, { class => "URI::file", parent => $uri };
 
 coerce( FileUri,
     from Str                 , via { URI::file->new($_) },
+    from File                , via { URI::file->new($_) },
+    from Dir                 , via { URI::file->new($_) },
     from "Path::Class::File" , via { URI::file->new($_) },
     from "Path::Class::Dir"  , via { URI::file->new($_) },
 );
