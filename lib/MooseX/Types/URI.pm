@@ -13,7 +13,7 @@ use URI;
 use URI::file;
 use URI::data;
 use URI::WithBase;
-use URI::FromHash qw(uri);
+use URI::FromHash qw(uri_object);
 
 use Moose::Util::TypeConstraints;
 
@@ -48,7 +48,7 @@ coerce( Uri,
     from File                , via { URI::file->new($_) },
     from Dir                 , via { URI::file->new($_) },
     from ScalarRef           , via { my $u = URI->new("data:"); $u->data($$_); $u },
-    from HashRef             , via { uri(%$_) },
+    from HashRef             , via { uri_object(%$_) },
 );
 
 class_type FileUri, { class => "URI::file", parent => $uri };

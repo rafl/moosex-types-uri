@@ -90,6 +90,10 @@ isa_ok( to_Uri("foo"), "URI" );
 is( to_Uri("foo")->path, "foo", "URI" );
 is( to_Uri("foo")->scheme, undef, "URI" );
 
+isa_ok( to_Uri({path => "foo"}), "URI" );
+is( to_Uri({path => "foo"})->path, "foo", "URI from HashRef" );
+is( to_Uri({path => "foo"})->scheme, undef, "URI from HashRef" );
+
 isa_ok( to_FileUri("foo"), "URI::file" );
 is( to_FileUri("foo")->file, "foo", "filename" );
 
