@@ -1,3 +1,7 @@
+0.03  Thu, 17 Nov 2011 16:40:20 +0100
+  * Adapt to the new type constraint inlining API in Moose 2.0100
+    (Shawn M Moore).
+
 0.02  Wed, 27 May 2009 19:49:49 +0200
   * Use MooseX::Types type declarators in the type coercions (Daniel Pittman).
   * Coerce from additional MooseX::Types::Path::Class types (Daniel Pittman).
