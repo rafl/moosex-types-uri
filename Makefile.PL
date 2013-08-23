@@ -12,12 +12,17 @@ WriteMakefile(
 	PL_FILES     => { },
 	PREREQ_PM    => {
 		'Test::use::ok' => 0,
-        'Moose' => '0.50',
-        'MooseX::Types' => 0,
-        'MooseX::Types::Path::Class' => 0,
-        'URI' => 0,
-        'URI::FromHash' => 0,
-        'namespace::clean' => '0.08',
+		'Moose' => '0.50',
+		'MooseX::Types' => 0,
+		'MooseX::Types::Path::Class' => 0,
+ 		'URI' => 0,
+		'URI::FromHash' => 0,
+		'namespace::clean' => '0.08',
+	},
+	META_MERGE  => {
+		resources => {
+			repository  =>  'https://github.com/rafl/moosex-types-uri',
+		},
 	},
 );
 
